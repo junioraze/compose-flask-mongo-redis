@@ -1,0 +1,22 @@
+<form action="/new" method="POST">
+  <label for="name">item_name:</label>
+  <input type="text" name="name"></input>
+  <label for="description">description:</label>
+  <input type="text" name="description"></input>
+  <input type="submit"></input>
+</form>
+
+<form action="/delete" method "POST">
+  <input type="submit" value="clean_itens" name='delBtn'></input>
+</form>
+
+
+<form action="/redis_remove" method "POST">
+  <input type="submit" value="clean_redis" name='redisBtn'></input>
+</form>
+
+{% for item in items %}
+  <h1> item_name: {{ item.name }} </h1>
+  <p> item_description: {{ item.description }} <p>
+  <p> redis_count: {{ item.redis_count }} <p>
+{% endfor %}

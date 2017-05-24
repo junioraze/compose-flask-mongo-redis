@@ -1,0 +1,15 @@
+web:
+  build: .
+  command: python -u app.py
+  ports:
+    - "5000:5000"
+  volumes:
+    - .:/todo
+  links:
+    - db
+    - redis
+db:
+  image: mongo:3.0.2
+redis:
+  image: redis
+
